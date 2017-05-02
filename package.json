@@ -3,16 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
   },
   "devDependencies": {
+    "husky": "0.13.3",
+    "lint-staged": "3.4.1",
+    "prettier": "1.2.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "coverage": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --print-width 80 --single-quote --trailing-comma all --no-semi --write",
+      "git add"
+    ]
   }
 }
