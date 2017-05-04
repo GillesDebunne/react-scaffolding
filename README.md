@@ -41,7 +41,9 @@ You can globally install [flow-coverage-report](https://github.com/rpl/flow-cove
 yarn storybook
 ```
 
-Create stories for all dumb components, with nominal and limit cases. For `MyComponent.js`, create an associated `MyComponent.stories.js` file, located next to it.
+Create stories for all dumb components, with nominal and limit cases. For `MyComponent.js`, create an associated `MyComponent.spec.js` file, located next to it.
+
+Use `snapshotStoriesOf` from `'./utils/snapshotStories'` to declare your stories, and end them with a call to `compareWithSnapshot()` to automatically snapshot test all stories.
 
 ## ESLint
 
@@ -61,6 +63,8 @@ Run all tests (by default only those affected by your ongoing changes since the 
 yarn test
 ```
 
+Rely on snapshot testing (`expect(myString).toMatchSnapshot()`) to easily detect regressions.
+
 To get a test code coverage report of the entire code base, run:
 
 ```
@@ -72,6 +76,4 @@ yarn coverage
 Onboarding guide when starting from scratch
 
 Add Checks and metrics on CI
-
-Explain and use snapshot testing
 

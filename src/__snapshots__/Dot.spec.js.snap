@@ -1,0 +1,12 @@
+exports[`Dot nominal 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "border": "3px solid #4FAFBB",
+      "borderRadius": "50%",
+      "height": 16,
+      "width": 16,
+    }
+  } />
+`;
